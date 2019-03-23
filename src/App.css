@@ -1,0 +1,26 @@
+.App {
+  min-height: 100vh;
+  margin: 0px;
+  padding: 0px;
+}
+
+.App .fh {
+  max-height: 100vh;
+}
+
+.App .hero {
+  padding: 80px 0px;
+}
+
+.App .hero header {
+  text-align: center;
+}
+
+.App .main {
+  height: 70%;
+}
+
+.App .student-form {
+  max-height: 100vh;
+  overflow: scroll;
+}
