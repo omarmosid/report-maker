@@ -122,8 +122,8 @@ class PdfOutput extends Component {
             <Text style={styles.labelText_commskills_Child}>Speaking Skills: <Text style={styles.inputText}>{this.props.speakingSkills}</Text></Text>
             <Text style={styles.labelText_commskills_Child}>Reading Skills: <Text style={styles.inputText}>{this.props.readingSkills}</Text></Text>
             <Text style={styles.labelText_commskills_Child_Writing}>Writing Skills:</Text>
-            <Text style={styles.labelText_commskills_Child_Child}>a. Organisation and content: <Text style={styles.inputText}>{this.props.ocSKills}</Text></Text>
-            <Text style={styles.labelText_commskills_Child_Child}>b. Presentation and submission: <Text style={styles.inputText}>{this.props.ocSKills}</Text></Text>
+            <Text style={styles.labelText_commskills_Child_Child}>a. Organisation and content: <Text style={styles.inputText}>{this.props.ocSkills}</Text></Text>
+            <Text style={styles.labelText_commskills_Child_Child}>b. Presentation and submission: <Text style={styles.inputText}>{this.props.psSkills}</Text></Text>
 
             <Text style={styles.labelText}>Vocabulary and grammar: <Text style={styles.inputText}>{this.props.vocabGram}</Text></Text>
             <Text style={styles.labelText}>Classroom involvement: <Text style={styles.inputText}>{this.props.classInvolv}</Text></Text>

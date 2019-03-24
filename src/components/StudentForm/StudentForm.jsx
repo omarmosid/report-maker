@@ -1,3 +1,8 @@
+/**
+ * TODO Add form Validation - limit characters
+ * TODO Integrate with Redux
+ */
+
 import React, { Component } from 'react'
 import { Form } from 'semantic-ui-react'
 
@@ -9,9 +14,11 @@ class StudentForm extends Component {
 					<Form.Group widths='equal'>
 						<Form.Input 
 							fluid
+							disabled
 							name='firstName'  
 							label='First name' 
 							placeholder='First name'
+							value={this.props.firstName}
 							onChange={(event) => this.props.handleChange(event)}
 						/>
 						{/* <Form.Input 
