@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import { Header, Grid } from 'semantic-ui-react';
+import { Header, Grid, Button } from 'semantic-ui-react';
 
-import { PDFViewer } from '@react-pdf/renderer';
+import { PDFViewer, PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
 
 import StudentForm from './components/StudentForm/StudentForm.jsx';
 import PdfOutput from './components/PdfOutput/PdfOutput.jsx';
@@ -16,14 +16,14 @@ const lorem30 = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic n
 class App extends Component {
 
 	state = {
-		firstName : 'Omar Mohammad',
-		lastName : '',
+		firstName: 'Omar Mohammad',
+		lastName: '',
 		topicsTaught: '',
 		conUnd: '',
 		listeningSkills: '',
 		speakingSkills: '',
 		readingSkills: '',
-		ocSKills: '',
+		ocSkills: '',
 		psSkills: '',
 		vocabGram: '',
 		classInvolv: '',
@@ -35,26 +35,36 @@ class App extends Component {
 	handleChange = (event) => {
 		console.log(event.target.name);
 		this.setState({
-			[event.target.name] : event.target.value
+			[event.target.name]: event.target.value
 		})
 	}
 
 	render() {
 		return (
 			<div className="App">
-				<Grid 
-					container={true}
-					divided
-					columns={2}
-					className="fh"
-				>
-					<Grid.Row centered style={{padding: "40px 0px"}}>
-						<Header as='h1' textAlign='center'>VHS Report Maker</Header>
-					</Grid.Row>
-					<Grid.Row>
-						<Grid.Column className="student-form">
-							<StudentForm 
-								handleChange={this.handleChange}
+				<div className="container">
+					<div className="col form-container">
+						<StudentForm
+							handleChange={this.handleChange}
+							firstName={this.state.firstName}
+							lastName={this.state.lastName}
+							topicsTaught={this.state.topicsTaught}
+							conUnd={this.state.conUnd}
+							listeningSkills={this.state.listeningSkills}
+							speakingSkills={this.state.speakingSkills}
+							readingSkills={this.state.readingSkills}
+							ocSkills={this.state.ocSkills}
+							psSkills={this.state.psSkills}
+							vocabGram={this.state.vocabGram}
+							classInvolv={this.state.classInvolv}
+							testPerf={this.state.testPerf}
+							sugg={this.state.sugg}
+							comments={this.state.comments}
+						/>
+					</div>
+					<div className="col pdf-container">
+						<PDFViewer width="100%" height="100%">
+							<PdfOutput
 								firstName={this.state.firstName}
 								lastName={this.state.lastName}
 								topicsTaught={this.state.topicsTaught}
@@ -62,7 +72,7 @@ class App extends Component {
 								listeningSkills={this.state.listeningSkills}
 								speakingSkills={this.state.speakingSkills}
 								readingSkills={this.state.readingSkills}
-								ocSKills={this.state.ocSKills}
+								ocSkills={this.state.ocSkills}
 								psSkills={this.state.psSkills}
 								vocabGram={this.state.vocabGram}
 								classInvolv={this.state.classInvolv}
@@ -70,29 +80,12 @@ class App extends Component {
 								sugg={this.state.sugg}
 								comments={this.state.comments}
 							/>
-						</Grid.Column>
-						<Grid.Column>
-							<PDFViewer width="100%" height="100%">
-								<PdfOutput 
-									firstName={this.state.firstName}
-									lastName={this.state.lastName}
-									topicsTaught={this.state.topicsTaught}
-									conUnd={this.state.conUnd}
-									listeningSkills={this.state.listeningSkills}
-									speakingSkills={this.state.speakingSkills}
-									readingSkills={this.state.readingSkills}
-									ocSKills={this.state.ocSKills}
-									psSkills={this.state.psSkills}
-									vocabGram={this.state.vocabGram}
-									classInvolv={this.state.classInvolv}
-									testPerf={this.state.testPerf}
-									sugg={this.state.sugg}
-									comments={this.state.comments}
-								/>
-							</PDFViewer>
-						</Grid.Column>
-					</Grid.Row>
-				</Grid>
+						</PDFViewer>
+					</div>
+				</div>
+				{/* <div className="footer">
+					<Button>Save Student Profile</Button>
+				</div> */}
 			</div>
 		);
 	}
