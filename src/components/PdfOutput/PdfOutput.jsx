@@ -108,9 +108,10 @@ class PdfOutput extends Component {
             // debug={true} 
             style={styles.section}
           >
-            <Text style={styles.topMetaText}>TERM 1 Report for Class IX</Text>
+            <Text style={styles.topMetaText}>TERM 1 Report for Class X</Text>
             
             <View style={styles.topSubject_Name}>
+              <Text>Omar</Text>
               <Text style={styles.subjectTitleText}>SUBJECT REPORT: LANGUAGE & LITERATURE: HINDI {" "} {" "} {" "} <Text style={styles.nameText}>{this.props.firstName}</Text></Text> 
             </View>
 

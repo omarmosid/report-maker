@@ -14,7 +14,6 @@ class StudentForm extends Component {
 					<Form.Group widths='equal'>
 						<Form.Input 
 							fluid
-							disabled
 							name='firstName'  
 							label='First name' 
 							placeholder='First name'
